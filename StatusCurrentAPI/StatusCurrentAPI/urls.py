@@ -17,6 +17,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from StatusCurrentApp import views
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('blogposts/', views.BlogPostListCreateView.as_view(), name='blogpost-list-create'),
+    path('blogposts/<int:pk>/', views.BlogPostDetailView.as_view(), name='blogpost-detail')
 ]
