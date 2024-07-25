@@ -53,6 +53,7 @@ const blogPostsSlice = createSlice({
       .addCase(fetchBlogPosts.fulfilled, (state, action) => {
         state.status = "succeeded";
         state.posts = action.payload;
+        state.error = null;
       })
       .addCase(fetchBlogPosts.rejected, (state, action) => {
         state.status = "failed";

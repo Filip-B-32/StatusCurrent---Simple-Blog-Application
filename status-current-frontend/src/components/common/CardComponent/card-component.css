@@ -23,3 +23,13 @@
 .ant-card .ant-card-actions > li > span > .anticon {
   color: white;
 }
+
+.timestamps {
+  margin-top: 16px;
+  font-size: 14px;
+  color: #888;
+}
+
+.timestamps p {
+  margin: 0;
+}
