@@ -1,0 +1,51 @@
+version: '3.9'
+
+services:
+  db:
+    image: postgres:13
+    environment:
+      POSTGRES_DB: blogpostdb
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: dolohitohi50
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d blogpostdb"]
+      interval: 10s
+      retries: 5
+      start_period: 30s
+      timeout: 5s
+
+  backend:
+    build:
+      context: ./StatusCurrentAPI
+      dockerfile: backend.dockerfile
+    command: ["sh", "-c", "python manage.py migrate && python manage.py runserver 0.0.0.0:8000"]
+    volumes:
+      - ./StatusCurrentAPI:/StatusCurrentAPI
+    ports:
+      - "8000:8000"
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      - DATABASE_NAME=blogpostdb
+      - DATABASE_USER=postgres
+      - DATABASE_PASSWORD=dolohitohi50
+      - DATABASE_HOST=db
+      - DATABASE_PORT=5432
+
+  frontend:
+    build:
+      context: ./status-current-frontend
+      dockerfile: frontend.dockerfile
+    volumes:
+      - ./status-current-frontend:/status-current-frontend
+    ports:
+      - "3000:3000"
+    command: ["npm", "start"]
+
+volumes:
+  postgres_data:

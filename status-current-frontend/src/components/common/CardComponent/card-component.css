@@ -6,6 +6,8 @@
 
 .card-component-wrapper .ant-card-head-title {
   color: white;
+  white-space: normal;
+  word-wrap: break-word;
 }
 
 .author-wrapper {
