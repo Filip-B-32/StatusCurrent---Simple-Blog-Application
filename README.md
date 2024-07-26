@@ -39,3 +39,4 @@ EditModal:
 ![image](https://github.com/user-attachments/assets/fa4cc1e9-7673-48a7-88f0-3b711741aa15)
 
 
+Every password is a mock, no sensitive data was leaked.
