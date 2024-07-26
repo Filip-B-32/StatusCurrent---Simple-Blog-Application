@@ -27,3 +27,15 @@ This project uses docker for packaging the application with all the dependencies
     - run "npm install" to install the dependencies
     - this application uses AXIOS for making the HTTP requests. In axiosConfig/axiosInstance.js set the base URL (host:port)
     - run frontend by using "npm start"
+
+Project results:
+BlogPage:
+![image](https://github.com/user-attachments/assets/da44b8f7-da87-4c9f-9dfb-1e68a8ad8c3e)
+
+CreateModal:
+![image](https://github.com/user-attachments/assets/df2fc560-db54-4f67-8131-2eccce52883f)
+
+EditModal:
+![image](https://github.com/user-attachments/assets/fa4cc1e9-7673-48a7-88f0-3b711741aa15)
+
+
