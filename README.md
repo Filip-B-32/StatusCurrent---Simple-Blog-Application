@@ -39,4 +39,9 @@ EditModal:
 ![image](https://github.com/user-attachments/assets/fa4cc1e9-7673-48a7-88f0-3b711741aa15)
 
 
+This applications uses docker-compose to simplify the proccess of defining and running multicontainer (frontend, backend, db). To utilize the docker-compose run the following command: "docker-compose up --build".
+
+Improvements:
+In the "Given more time" case, this application will have a secure authentification functionality and also a comment section for the blog post, therefore will add a details page to fetch the comments by blog post to not fetch all the comments, just what we need.
+
 Every password is a mock, no sensitive data was leaked.
